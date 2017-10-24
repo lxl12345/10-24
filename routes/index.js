@@ -8,8 +8,9 @@ router.get('/', function(req, res, next) {
 		n++
 		console.log(n)
 		fs.writeFile('read.txt','当前浏览的次数是:'+n)
+		res.render('index', { title: n});
 	})
-  res.render('index', { title: n+1 });
+  
 });
 
 module.exports = router;
